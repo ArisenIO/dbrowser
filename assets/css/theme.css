@@ -29,7 +29,8 @@ h6,
 .h4,
 .h5,
 .h6 {
-    font-weight: 400;
+    font-weight: 100;
+    font-family: Montserrat;
 }
 
 h1>a,
@@ -45,7 +46,8 @@ h6>a,
 .h5>a,
 .h6>a {
     color: #151b26;
-    font-weight: 400;
+    font-weight: 100;
+    font-family: Montserrat;
 }
 
 h1>a:hover,
@@ -6580,12 +6582,12 @@ button:focus {
 }
 
 @media (min-width: 576px) {
-    /* .position-absolute-bottom-0--sm {
+    .position-absolute-bottom-0--sm {
         position: absolute;
         right: 0;
         bottom: 0;
         left: 0;
-    } */
+    }
 }
 
 @media (min-width: 768px) {
@@ -6954,7 +6956,7 @@ button:focus {
 ------------------------------------*/
 
 .font-weight-medium {
-    font-weight: 500;
+    font-weight: 700;
 }
 
 
@@ -7354,14 +7356,14 @@ button:focus {
 }
 
 h1{
-    font-family: Proxima Nova;
-    font-weight: 900 !important;
+    font-family: Montserrat;
+    font-weight: 700 !important;
 }
-p{
-    font-family: Proxima Nova;
-    font-weight: 300 !important;
+p,li{
+    font-family: Montserrat;
+    font-weight: 100 !important;
 }
 span{
-    font-family: Proxima Nova;
-    font-weight: 900 !important;
+    font-family: Montserrat;
+    font-weight: 100 !important;
 }
