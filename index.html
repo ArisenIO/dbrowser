@@ -75,8 +75,8 @@
                         <!-- Title -->
                         <div class="mb-4 mt-4">
                             <h1 class = "dispaly-3 font-size-48--md-down font-weight-medium">Experience The Decentralized Web</h1>
-                            <p class="lead">dBrowser is new DApp from peeps that allows people to browse the dweb Download for MacOS,Linux ,Windows and Experience the Decentralized web for yourself</p>
-                            <a class="btn btn-sm btn-primary mt-4" href="https://github.com/dbrowser/dbrowser/releases" role="button" target="_blank">
+                            <p class="lead" style='text-align: justify'>dBrowser is new DApp from peeps that allows people to browse the dweb Download for MacOS,Linux ,Windows and Experience the Decentralized web for yourself.</p>
+                            <a class="btn btn-sm btn-primary mt-4" href="https://github.com/dbrowser/dbrowser/releases" id='os_download' role="button" target="_blank">
                                 Download for OS </a>
 
                             <a class="btn btn-sm btn-primary mt-4" href="https://dwebs.io/" role="button" target="_blank">
@@ -223,7 +223,21 @@
 
     <!-- JS Plugins Init. -->
     <script>
-
+        if(navigator.platform.indexOf('Linux') !== -1) {
+            document.getElementById('os_download').innerHTML = `Download For LinuxOS`
+        } else if(navigator.platform.indexOf('Mac') !== -1) {
+            document.getElementById('os_download').innerHTML = `Download For MacOS`
+        } else if(navigator.platform.indexOf('Win') !== -1) {
+            document.getElementById('os_download').innerHTML = `Download For Windows`
+        }
+        let txt = document.getElementById('os_download');
+            if(txt.innerHTML.indexOf('Linux') !== -1) {
+                txt.href = 'https://github.com/dBrowser/dbrowser/releases/download/1.7.5/dbrowser-1.7.5-x86_64.AppImage'
+            } else if(txt.innerHTML.indexOf('Mac') !== -1) {
+                txt.href = 'https://github.com/dBrowser/dbrowser/releases/download/1.7.5/dbrowser-1.7.5.dmg'
+            } else  if(txt.innerHTML.indexOf('Win') !== -1) {
+                txt.href = 'https://github.com/dBrowser/dbrowser/releases/download/1.7.5/dbrowser-setup-1.7.5.exe'
+            }
          axios.get('https://nv6khovry9.execute-api.us-east-1.amazonaws.com/dev/rsn_price_from_bts')
             .then(function (response) {
             document.getElementById('rix-price').innerHTML = `RIX Price : $ ${parseFloat(response.data.data.USD.price).toFixed(4)}`;
