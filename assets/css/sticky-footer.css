@@ -43,3 +43,6 @@ body {
   max-width: 25px;
   max-height: 20px;
 }
+.u-sticky-footer a {
+  color: #646f79;
+}

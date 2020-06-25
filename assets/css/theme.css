@@ -4652,7 +4652,9 @@ h2.modal-title {
         width: 100%;
     }
 }
-
+.desktop-nav li a {
+    color: #646f79;
+}
 @media (min-width: 992px) {
     .card-lg-2-count {
         -webkit-column-count: 2;
@@ -7479,7 +7481,7 @@ ul.desktop-nav li.active a {
   .sidebar a.active {
     border-bottom: 1px solid;
     border-top: 1px solid;
-    color: #646f79;
+    color: #b9c7d4;
   }
   
   .sidebar .closebtn {
