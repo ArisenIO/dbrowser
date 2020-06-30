@@ -102,7 +102,7 @@
                         <div class="mb-4 mt-4">
                             <h1 class = "dispaly-3 font-size-48--md-down font-weight-medium">Experience The Decentralized Web</h1>
                             <p class="lead" style='text-align: center'>dBrowser will soon allow users and developers to browse the dWeb and build decentralized websites and applications. One July 15th, dBrowser will make its global debut on MacOS, Windows and Linux so you can experience the decentralized web for yourself.</p>
-                            <a class="btn btn-sm btn-primary mt-4" style="background-color: rgb(71,116,182); border-color: rgb(71,116,182)" href="https://github.com/dbrowser/dbrowser/releases" id='os_download' role="button" target="_blank">
+                            <a class="btn btn-sm btn-primary mt-4" style="background-color: rgb(71,116,182); border-color: rgb(71,116,182)" href="https://github.com/dbrowser/dbrowser/releases" id='os_download' role="button" target="_blank" >
                                 Download for OS </a>
 
                             <a class="btn btn-sm btn-primary mt-4" style="background-color: rgb(71,116,182); border-color: rgb(71,116,182)" href="https://dwebs.io/" role="button" target="_blank">
@@ -110,6 +110,27 @@
 
                         </div>
                         <!-- End Title -->
+                         <!-- Countdown -->
+                         <div class="js-countdown row" data-end-date="2020/7/15" data-month-format="%m" data-days-format="%D" data-hours-format="%H" data-minutes-format="%M" data-seconds-format="%S">
+                            <div class="col-6 col-sm-3 mb-7 mb-sm-0">
+                                <span class="js-cd-days d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="d-block h5 font-weight-normal mb-0">Days</span>
+                            </div>
+                            <div class="col-6 col-sm-3 mb-7 mb-sm-0">
+                                <span class="js-cd-hours d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="d-block h5 font-weight-normal mb-0">Hours</span>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <span class="js-cd-minutes d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="d-block h5 font-weight-normal mb-0">Mins</span>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <span class="js-cd-seconds d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="d-block h5 font-weight-normal mb-0">Secs</span>
+                            </div>
+                        </div>
+                        <!-- End Countdown -->
+
                     </div>
                 </div>
             </div>
@@ -294,22 +315,25 @@
                 secondsElSelector: '.js-cd-seconds'
             });
             let count = Date.now()
-            if(count > 1588879800000) {
+            if(count > 1594794600000) {
                 jQuery(".js-countdown").hide();
             }  
         });
-        function getMobileOperatingSystem() {
+
+
+
+        (function getMobileOperatingSystem() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/android/i.test(userAgent)) {
                 document.getElementById('os_download').disabled = true
-                alert('Coming Soon For Android')
+               // alert('Coming Soon For Android')
             }
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 document.getElementById('os_download').disabled = true
-                alert('Coming Soon For iOS')
+              //  alert('Coming Soon For iOS')
             }
 
-        }
+        })()
     </script>
 </body>
 
