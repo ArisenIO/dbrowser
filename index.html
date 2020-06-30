@@ -113,19 +113,19 @@
                          <!-- Countdown -->
                          <div class="js-countdown row" data-end-date="2020/7/15" data-month-format="%m" data-days-format="%D" data-hours-format="%H" data-minutes-format="%M" data-seconds-format="%S">
                             <div class="col-6 col-sm-3 mb-7 mb-sm-0">
-                                <span class="js-cd-days d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="js-cd-days d-block display-4  font-weight-medium" style="color: rgb(71,116,182)"></span>
                                 <span class="d-block h5 font-weight-normal mb-0">Days</span>
                             </div>
                             <div class="col-6 col-sm-3 mb-7 mb-sm-0">
-                                <span class="js-cd-hours d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="js-cd-hours d-block display-4  font-weight-medium" style="color: rgb(71,116,182)"></span>
                                 <span class="d-block h5 font-weight-normal mb-0">Hours</span>
                             </div>
                             <div class="col-6 col-sm-3">
-                                <span class="js-cd-minutes d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="js-cd-minutes d-block display-4  font-weight-medium" style="color: rgb(71,116,182)"></span>
                                 <span class="d-block h5 font-weight-normal mb-0">Mins</span>
                             </div>
                             <div class="col-6 col-sm-3">
-                                <span class="js-cd-seconds d-block display-4 text-primary font-weight-medium"></span>
+                                <span class="js-cd-seconds d-block display-4  font-weight-medium" style="color: rgb(71,116,182)"></span>
                                 <span class="d-block h5 font-weight-normal mb-0">Secs</span>
                             </div>
                         </div>
@@ -250,6 +250,7 @@
 
     <!-- JS Plugins Init. -->
     <script>
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
                 // slide Nav bar from left
         function openNav() {
              document.getElementById("mySidebar").style.width = "250px";
@@ -262,13 +263,22 @@
         }
         // slide Nav bar from left end
 
-        if(navigator.platform.indexOf('Linux') !== -1) {
+        if(/linux/i.test(userAgent)) {
             document.getElementById('os_download').innerHTML = `Download For LinuxOS`
-        } else if(navigator.platform.indexOf('Mac') !== -1) {
+        } else if(/mac/i.test(userAgent)) {
             document.getElementById('os_download').innerHTML = `Download For MacOS`
-        } else if(navigator.platform.indexOf('Win') !== -1) {
+        } else if(/win/i.test(userAgent)) {
             document.getElementById('os_download').innerHTML = `Download For Windows`
+        } else if (/android/i.test(userAgent)) {
+            document.getElementById('os_download').disabled = true
+            alert('Coming Soon For Android')
         }
+         else  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            document.getElementById('os_download').disabled = true
+            alert('Coming Soon For iOS')
+        }
+
+        
         let txt = document.getElementById('os_download');
             if(txt.innerHTML.indexOf('Linux') !== -1) {
                 txt.href = 'https://github.com/dBrowser/dbrowser/releases/download/1.7.5/dbrowser-1.7.5-x86_64.AppImage'
@@ -322,18 +332,18 @@
 
 
 
-        (function getMobileOperatingSystem() {
-            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-            if (/android/i.test(userAgent)) {
-                document.getElementById('os_download').disabled = true
-               // alert('Coming Soon For Android')
-            }
-            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                document.getElementById('os_download').disabled = true
-              //  alert('Coming Soon For iOS')
-            }
+        // (function getMobileOperatingSystem() {
+        //     var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        //     if (/android/i.test(userAgent)) {
+        //         document.getElementById('os_download').disabled = true
+        //        // alert('Coming Soon For Android')
+        //     }
+        //     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        //         document.getElementById('os_download').disabled = true
+        //       //  alert('Coming Soon For iOS')
+        //     }
 
-        })()
+        // })()
     </script>
 </body>
 
