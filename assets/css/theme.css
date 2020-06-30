@@ -7399,7 +7399,7 @@ h1{
 }
 p,li{
     font-family: Montserrat;
-    font-weight: 501 !important;
+    font-weight: 500 !important;
 }
 span{
     font-family: Montserrat;
@@ -7517,4 +7517,7 @@ ul.desktop-nav li.active a {
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
+  }
+  .lead p{
+      text-align: center;
   }
