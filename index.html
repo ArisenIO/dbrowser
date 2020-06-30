@@ -270,10 +270,12 @@
         } else if(/win/i.test(userAgent)) {
             document.getElementById('os_download').innerHTML = `Download For Windows`
         } else if (/android/i.test(userAgent)) {
+            document.getElementById('os_download').innerHTML = `Download For Android`
             document.getElementById('os_download').disabled = true
             alert('Coming Soon For Android')
         }
          else  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            document.getElementById('os_download').innerHTML = `Download For iPhone`
             document.getElementById('os_download').disabled = true
             alert('Coming Soon For iOS')
         }
