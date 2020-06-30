@@ -7521,3 +7521,8 @@ ul.desktop-nav li.active a {
   .lead p{
       text-align: center;
   }
+
+  .countercolor {
+
+    color: rgb(71,116,182);
+  }
