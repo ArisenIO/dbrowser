@@ -262,24 +262,22 @@
             //  document.getElementById("header").style.marginLeft= "0";
         }
         // slide Nav bar from left end
+        
+        var isMobile = window.orientation > -1;
+        if(isMobile){
+            document.getElementById('os_download').innerHTML = `Download For Mobile`
+            document.getElementById('os_download').disabled = true
+        }
 
-        if(/linux/i.test(userAgent)) {
+        else{
+        if(navigator.userAgent.match(/linux/i)) {
             document.getElementById('os_download').innerHTML = `Download For LinuxOS`
-        } else if(/mac/i.test(userAgent)) {
+        }  if(navigator.userAgent.match(/mac/i)) {
             document.getElementById('os_download').innerHTML = `Download For MacOS`
-        } else if(/win/i.test(userAgent)) {
+        }  if(navigator.userAgent.match(/win/i)) {
             document.getElementById('os_download').innerHTML = `Download For Windows`
-        } else if (/android/i.test(userAgent)) {
-            document.getElementById('os_download').innerHTML = `Download For Android`
-            document.getElementById('os_download').disabled = true
-            alert('Coming Soon For Android')
+        } 
         }
-         else  if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-            document.getElementById('os_download').innerHTML = `Download For iPhone`
-            document.getElementById('os_download').disabled = true
-            alert('Coming Soon For iOS')
-        }
-
         
         let txt = document.getElementById('os_download');
             if(txt.innerHTML.indexOf('Linux') !== -1) {
@@ -289,6 +287,11 @@
             } else  if(txt.innerHTML.indexOf('Win') !== -1) {
                 txt.href = 'https://github.com/dBrowser/dbrowser/releases/download/1.7.5/dbrowser-setup-1.7.5.exe'
             }
+            else{
+                txt.href = "#"
+            }
+
+
          axios.get('https://nv6khovry9.execute-api.us-east-1.amazonaws.com/dev/rsn_price_from_bts')
             .then(function (response) {
             document.getElementById('rix-price').innerHTML = `RIX Price : $ ${parseFloat(response.data.data.USD.price).toFixed(4)}`;
